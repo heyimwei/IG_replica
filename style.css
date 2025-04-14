@@ -1,0 +1,147 @@
+/* ======== 全局設定 ======== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa; /* IG 類似的背景色 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* 隱藏水平滾動條 (保留滾動功能) */
+.overflow-x-auto {
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none;     /* Firefox */
+}
+.overflow-x-auto::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* ===== Stories 的容器與箭頭按鈕 ===== */
+.stories-wrapper {
+  /* 相對定位，讓箭頭按鈕可絕對定位在裡面 */
+  position: relative;
+}
+
+/* 隱藏水平滾動條 (保留滾動功能) */
+.stories-container {
+  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none;     /* Firefox */
+}
+.stories-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* 左右箭頭按鈕的基礎樣式 */
+.stories-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* 確保蓋在頭像上方 */
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 預設先隱藏，可改成 opacity: 0; */
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* 左箭頭位置 */
+.stories-arrow-left {
+  left: 0.5rem;
+}
+
+/* 右箭頭位置 */
+.stories-arrow-right {
+  right: 0.5rem;
+}
+
+/* 滑鼠移動到 stories-wrapper 時，顯示箭頭 (可依需求微調條件) */
+.stories-wrapper:hover .stories-arrow {
+  opacity: 1;
+}
+
+/* ===== Story 头像漸層框 ===== */
+.story-avatar-wrapper {
+  width: 66px;
+  height: 66px;
+  padding: 3px;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.story-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+/* ======== 左側導覽列 Nav ======== */
+.ig-leftnav {
+  /* 無額外設定可依需求加 */
+}
+
+/* 導覽列連結的基礎樣式：粗體、字型大小、hover 效果等 */
+.ig-navlink {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem; /* 可依需求調整 */
+}
+.ig-navlink:hover {
+  background-color: #fafafa;
+  text-decoration: none;
+}
+
+/* Instagram Logo 的字體示意 (可換成字體檔或圖片) */
+.ig-logo {
+  font-family: "Cookie", cursive; /* IG logo 類似字型Cookie，可自行匯入 */
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  /* 如果沒有Cookie字型，就使用一般字體 */
+}
+
+/* 紅點提示 badge */
+.ig-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  font-size: 0.65rem;
+  color: #fff;
+  background-color: #ed4956; /* IG 紅 */
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+  font-weight: 600;
+}
+
+/* ======== 右側區塊 ======== */
+.ig-rightbar {
+  /* 無特殊設定，可加上 overflow 或其他 */
+}
+
+/* ======== 連結 hover 效果 ======== */
+a:hover {
+  text-decoration: underline;
+}
